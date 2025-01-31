@@ -16,19 +16,20 @@ public class Main {
         Integer respuesta = scanner.nextInt();
 
         switch (respuesta){
+
             case 1:
-                 Scanner sc = new Scanner(System.in);
-                 Contacto contacto = new Contacto();
+                Contacto contacto = new Contacto();
                 System.out.println("Escriba el nombre");
-                String nombre = sc.nextLine();
+                String nombre = scanner.nextLine();
                 contacto.setNombre(nombre);
 
                 System.out.println("Escriba el telefono");
-                Integer telefono = sc.nextInt();
+                Integer telefono = scanner.nextInt();
                 contacto.setTelefono(telefono);
+                scanner.nextLine();
 
                 System.out.println("Escriba la ciudad");
-                String ciudad = sc.nextLine();
+                String ciudad = scanner.nextLine();
                 contacto.setCiudad(ciudad);
 
                 agenda.guardarContacto(contacto);
@@ -39,11 +40,17 @@ public class Main {
 
             case 2:
 
-                    break;
+                System.out.println("escriba el nombre para actualizar el contacto");
+                String nombreActulizar = scanner.nextLine();
+
+
+
+                break;
             case 3:
+                System.out.println("escriba el nombre del contacto para eliminar");
+                String nombreborrar = scanner.nextLine();
+                agenda.borrarContacto(nombreborrar);
 
-
-                agenda.borrarContacto(agenda.borrarContacto(contacto));
                 break;
 
 

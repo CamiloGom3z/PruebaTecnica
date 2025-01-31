@@ -17,9 +17,27 @@ public class Agenda {
         }
     }
 
-    public void borrarContacto (Contacto contacto){
+    public Contacto buscarPornombre (String nombre) {
+        for (Contacto c : contactos) {
+            if (c.getNombre().equalsIgnoreCase(nombre)) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public void borrarContacto (String nombre){
+        Contacto contacto = buscarPornombre(nombre);
         contactos.remove(contacto);
+        System.out.println("contacto :" + contacto + "ha sido eliminado");
     }
 
 
+    public List<Contacto> getContactos() {
+        return contactos;
+    }
+
+    public void setContactos(List<Contacto> contactos) {
+        this.contactos = contactos;
+    }
 }
